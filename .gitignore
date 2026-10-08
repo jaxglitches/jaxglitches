@@ -63,3 +63,7 @@ site/
 # rendered quick-start notebook (rebuilt from the ipynb)
 docs/example.md
 docs/assets/quickstart/
+
+# research notebook pages and copies rendered from saved sources
+docs/notebook-gallery/
+docs/assets/notebook-gallery/

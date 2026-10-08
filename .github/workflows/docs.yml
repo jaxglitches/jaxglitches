@@ -7,6 +7,8 @@ on:
       - docs/**
       - src/**
       - tools/build_example.py
+      - tools/render_notebooks.py
+      - notebooks/glitch_only/**
       - mkdocs.yml
       - pyproject.toml
       - uv.lock
@@ -33,6 +35,7 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: uv sync --locked --group docs --group examples
       - run: uv run --no-sync python tools/build_example.py
+      - run: uv run --no-sync python tools/render_notebooks.py
       - run: uv run --no-sync mkdocs build --strict
       - uses: actions/upload-pages-artifact@v3
         with:
