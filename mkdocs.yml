@@ -6,6 +6,8 @@ repo_name: jaxglitches/jaxglitches
 edit_uri: edit/main/docs/
 theme:
   name: material
+  logo: assets/branding/jaxglitches-icon.svg
+  favicon: assets/branding/jaxglitches-icon.png
   palette:
     primary: indigo
     accent: amber

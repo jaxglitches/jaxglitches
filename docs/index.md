@@ -1,5 +1,7 @@
 # jaxglitches
 
+![jaxglitches logo](assets/branding/jaxglitches-logo.svg)
+
 Differentiable LISA glitch waveforms, time-delay interferometry (TDI) responses,
 and parameter-estimation utilities built with JAX. Importing the package enables
 float64 arithmetic.
@@ -26,3 +28,9 @@ approximation studies with saved outputs.
 - [Source code and notebooks](https://github.com/jaxglitches/jaxglitches)
 - [LISA glitch simulation package](https://gitlab.in2p3.fr/lisa-simulation/glitch)
 - [Baghi et al. (2022), LISA Pathfinder glitch populations](https://arxiv.org/abs/2112.07490)
+
+## Logo assets
+
+Download the [wordmark (SVG)](assets/branding/jaxglitches-logo.svg),
+[transparent waveform mark (PNG)](assets/branding/jaxglitches-mark.png), or
+[square icon (PNG)](assets/branding/jaxglitches-icon.png) for use elsewhere.

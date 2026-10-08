@@ -1,5 +1,7 @@
 # jaxglitches
 
+![jaxglitches logo](docs/assets/branding/jaxglitches-logo.svg)
+
 [![PyPI](https://img.shields.io/pypi/v/jaxglitches)](https://pypi.org/project/jaxglitches/)
 [![JAX](https://img.shields.io/badge/JAX-differentiable-5B4B9A)](https://github.com/jax-ml/jax)
 [![Tests](https://github.com/jaxglitches/jaxglitches/actions/workflows/ci.yml/badge.svg)](https://github.com/jaxglitches/jaxglitches/actions/workflows/ci.yml)
