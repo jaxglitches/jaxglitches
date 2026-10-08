@@ -3,6 +3,8 @@ name = "jaxglitches"
 version = "0.1.0"
 description = "JAX-based LISA glitch waveforms, TDI responses (equal and unequal arms), and parameter-estimation utilities"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.12"
 dependencies = [
     "jax>=0.10.0",
@@ -10,6 +12,12 @@ dependencies = [
     "lisaorbits>=3.0.0",
     "numpy>=1.24",
 ]
+
+[project.urls]
+Homepage = "https://github.com/jaxglitches/jaxglitches"
+Documentation = "https://jaxglitches.github.io/jaxglitches/"
+Repository = "https://github.com/jaxglitches/jaxglitches"
+Issues = "https://github.com/jaxglitches/jaxglitches/issues"
 
 [project.optional-dependencies]
 notebook = [
@@ -63,6 +71,20 @@ packages = ["src/jaxglitches"]
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
+]
+
+docs = [
+    "mkdocs>=1.6,<2",
+    "mkdocs-material>=9.6,<10",
+    "mkdocstrings[python]>=0.30,<2",
+]
+examples = [
+    "matplotlib",
+    "nbconvert>=7,<8",
+    "ipykernel",
+]
+release = [
+    "twine>=7,<8",
 ]
 
 [tool.pytest.ini_options]

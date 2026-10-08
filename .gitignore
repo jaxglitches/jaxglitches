@@ -56,3 +56,10 @@ paper/
 
 # presentation draft (kept out of the package repo)
 presentation/
+
+# generated documentation
+site/
+
+# rendered quick-start notebook (rebuilt from the ipynb)
+docs/example.md
+docs/assets/quickstart/

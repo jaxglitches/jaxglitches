@@ -1,0 +1,36 @@
+site_name: jaxglitches
+site_description: Differentiable LISA glitch waveforms and inference utilities
+site_url: https://jaxglitches.github.io/jaxglitches/
+repo_url: https://github.com/jaxglitches/jaxglitches
+repo_name: jaxglitches/jaxglitches
+edit_uri: edit/main/docs/
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: amber
+  features:
+    - navigation.sections
+    - content.code.copy
+nav:
+  - Overview: index.md
+  - Getting started: getting-started.md
+  - Example notebook: example.md
+  - Conventions: conventions.md
+  - API reference: api.md
+  - Development and releases: development.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: numpy
+            show_source: false
+            show_root_heading: true
+            heading_level: 2
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
