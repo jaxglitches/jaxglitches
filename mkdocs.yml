@@ -16,7 +16,16 @@ nav:
   - Overview: index.md
   - Getting started: getting-started.md
   - Example notebook: example.md
+  - Research notebooks:
+      - Overview: gallery.md
+      - Equal versus unequal arms: notebook-gallery/unequal_vs_equal_arm.md
+      - Published comparisons: notebook-gallery/compare_other_codes.md
+      - Exact versus hybrid: notebook-gallery/exact_vs_hybrid.md
+      - Short glitches: notebook-gallery/short_glitch.md
+      - Raw response and TDI: notebook-gallery/raw_and_tdi_tests.md
   - Conventions: conventions.md
+  - GPU: gpu.md
+  - Paper reproduction: reproducing-paper.md
   - API reference: api.md
   - Development and releases: development.md
 plugins:
@@ -34,3 +43,9 @@ markdown_extensions:
   - admonition
   - pymdownx.highlight
   - pymdownx.superfences
+  - md_in_html
+  - pymdownx.arithmatex:
+      generic: true
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js

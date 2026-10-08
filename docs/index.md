@@ -18,6 +18,9 @@ Noise models used in the example notebooks live in `notebooks/noise.py` and
 are not part of the installed package. Galactic-binary waveforms, wavelet
 transforms, and simulation tools are optional extras.
 
+Explore the [research notebook gallery](gallery.md) for longer validation and
+approximation studies with saved outputs.
+
 ## References
 
 - [Source code and notebooks](https://github.com/jaxglitches/jaxglitches)

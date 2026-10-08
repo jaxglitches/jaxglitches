@@ -6,10 +6,14 @@
 uv sync --locked --group docs --group examples --group release
 uv run --no-sync pytest -q
 uv run --no-sync python tools/build_example.py
+uv run --no-sync python tools/render_notebooks.py
 uv run --no-sync mkdocs build --strict
 uv build
 uv run --no-sync twine check --strict dist/*
 ```
+
+The research notebook gallery is rendered from saved contents without executing
+its cells. Only the quick-start notebook is executed during the docs build.
 
 Preview the documentation with `uv run --no-sync mkdocs serve`.
 CI runs the existing tests on Python 3.12 and 3.13, executes the example notebook,
