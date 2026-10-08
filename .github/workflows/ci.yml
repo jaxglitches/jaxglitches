@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: '0.12.7'
+          python-version: ${{ matrix.python }}
+          enable-cache: true
+      - run: uv sync --locked
+      - run: uv run --no-sync pytest -q
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: '0.12.7'
+          python-version: '3.12'
+          enable-cache: true
+      - run: uv sync --locked --group docs --group examples
+      - run: uv run --no-sync python tools/build_example.py
+      - run: uv run --no-sync mkdocs build --strict
+
+  distributions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
+        with:
+          version: '0.12.7'
+          python-version: '3.12'
+          enable-cache: true
+      - run: uv sync --locked --group release
+      - run: uv build
+      - run: uv run --no-sync twine check --strict dist/*
+      - name: Test the installed wheel
+        run: |
+          uv pip install --no-deps --reinstall dist/*.whl
+          uv run --no-sync python -c "import jaxglitches; assert 'site-packages' in jaxglitches.__file__, jaxglitches.__file__"
+          uv run --no-sync pytest -q

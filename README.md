@@ -4,6 +4,12 @@ JAX-based LISA glitch waveforms, TDI responses, and parameter-estimation
 utilities. Everything is differentiable and jittable (float64 is enabled on
 import).
 
+[Documentation](https://jaxglitches.github.io/jaxglitches/) ·
+[Development and releases](docs/development.md)
+
+Licensed under the [MIT License](LICENSE), matching the APC global fit.
+Try the [example notebook](docs/examples/quickstart.ipynb) for waveforms and JAX derivatives.
+
 ## What's inside
 
 - **Waveforms** (`jaxglitches.waveform`): analytic time- and frequency-domain

@@ -47,7 +47,11 @@ class TestCleanSignal:
         aet = jg.clean_signal_f(params, freq, tdi=tdi, basis="AET")
         A, E, T = AET(xyz[:, 0], xyz[:, 1], xyz[:, 2])
         expected = jnp.stack([A, E, T], axis=-1).at[0].set(0.0)
-        assert jnp.allclose(aet, expected, atol=0.0, rtol=1e-14)
+        # The separately compiled paths can round differently when XYZ terms
+        # cancel. Bound roundoff by the input scale, not the near-zero output.
+        scale = jnp.sum(jnp.abs(xyz), axis=-1, keepdims=True)
+        atol = 8 * jnp.finfo(xyz.real.dtype).eps * scale
+        assert jnp.all(jnp.abs(aet - expected) <= atol + 1e-14 * jnp.abs(expected))
 
     def test_compute_tdi_reproduces_clean_signal_f(self, params, freq, tdi):
         """Documented contract: compute_TDI(raw_glitch_f(...)) equals
