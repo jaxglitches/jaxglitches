@@ -1,0 +1,3 @@
+# Marker file only. The notebooks locate the repository root by searching upwards for
+# pyproject.toml; this one makes them resolve to foreground/, so that every figure and
+# data file of the Galactic-foreground rerun is written here and never into ../paper.

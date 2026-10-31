@@ -54,6 +54,9 @@ epochs_*.h5
 # paper draft (kept out of the package repo)
 paper/
 
+# short version of the paper draft (kept out of the package repo)
+paper_short/
+
 # presentation draft (kept out of the package repo)
 presentation/
 
@@ -67,3 +70,13 @@ docs/assets/quickstart/
 # research notebook pages and copies rendered from saved sources
 docs/notebook-gallery/
 docs/assets/notebook-gallery/
+
+# Galactic-foreground sandbox: generated artefacts, regenerable as for notebooks/ above.
+# `paper/` above also matches foreground/paper/, whose validation notebooks are sources.
+foreground/notebooks/**/*.npz
+foreground/notebooks/**/*.log
+foreground/notebooks/pp/ppruns/
+foreground/notebooks/pp/decruns/
+foreground/notebooks/glitch_only/comparison_runs/
+!foreground/paper/
+foreground/paper/figures/
